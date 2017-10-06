@@ -1,3 +1,7 @@
+body{
+  padding-bottom: 50px;
+}
+
 /* EStos estilos permiten aplicar un efecto al cargar los textos donde se aplique*/
 .animated {
   -webkit-animation-duration: 1s;
