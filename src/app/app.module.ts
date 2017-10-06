@@ -24,7 +24,7 @@ import { HeroesComponent } from './components/heroes/heroes.component';
     AboutComponent,
     HeroesComponent
   ],
-  imports: [
+  imports: [    
     BrowserModule,
     APP_ROUTING
   ],
