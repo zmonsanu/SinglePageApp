@@ -1,3 +1,29 @@
+<h1> {{heroe.nombre}}</h1>
+<hr>
+
+<div class="row">
+ <div class="col-md-4">
+  <img  class="img-fluid" [src]="heroe.img" [alt]="heroe.nombre">
+  <br>
+  <br>
+    <a href="heroes" class="btn btn-outline-danger btn-block"> Volver..</a>
+
+</div>
+
+
+
+ <div class="col-md-8">
+    <p> {{heroe.bio}} </p>
+    <hr>
+      <div class="card-img-top">
+      <!-- Si la casa es DC poner imagen de DC sino la imagen de MArvel -->
+        <div *ngIf="heroe.casa =='DC'; else elseBlock " class="card card-inverse card-primary mb-3 text-center">
+            <img src="/assets/img/DC.jpg" class="img-circle" width="200" height="200" alt="Logo DC"></div>
+          <ng-template #elseBlock>
+             <img src="/assets/img/marvel.png"  class="img-circle" width="200" height="200" alt="Logo Marvel">
+           </ng-template>
+           <hr>
 <p>
-  heroe works!
-</p>
+         <small class="text-muted">Fecha aparición: {{heroe.aparicion}}</small></p>
+      </div>
+  </div>

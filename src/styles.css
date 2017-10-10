@@ -30,3 +30,5 @@ body{
 .fadeIn {
   animation-name: fadeIn;
 }
+
+/* Para poder mostrar icono de Search en boton busqueda*/
