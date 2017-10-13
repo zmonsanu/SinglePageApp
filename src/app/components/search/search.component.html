@@ -1,0 +1,24 @@
+
+<h1> <small>Resultados búsqueda...</small></h1>
+<hr>
+<div class="card-columns">
+  <div class="card animated fadeIn fast" *ngFor="let heroe of heroesSearch;let i=index">
+     <!--ESTA FORMA TAMBIEN ES VALIDA
+     <img class="card-img-top img-fluid" src="{{heroe.img}}" alt="Card image cap">  -->
+     <img class="card-img-top img-fluid" [src]="heroe.img" [alt]="heroe.nombre">
+     <div class="card-body">
+       <h4 class="card-title">{{heroe.nombre}}</h4>
+
+       <button type="button" (click)="mostrarInfo=!mostrarInfo"
+       class="btn btn-outline-primary btn-block" name="button">Ver más..</button>
+       </div>
+       <div *ngIf="mostrarInfo" class="card card-inverse card-primary mb-3 text-center">
+         <p class="card-text"> {{heroe.bio}}</p>
+           <footer>Fecha Creación: {{heroe.aparicion | date}}</footer>
+       </div>
+
+     </div>
+
+</div>
+<hr>
+  <a  [routerLink]="['/Home']" class="btn btn-outline-danger btn-block"> Volver..</a>
