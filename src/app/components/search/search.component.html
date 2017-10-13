@@ -1,6 +1,8 @@
 
-<h1> <small>Resultados búsqueda...</small></h1>
+<h1> <small>Resultados búsqueda de: </small> {{terminoABuscar}}</h1>
 <hr>
+
+<div *ngIf="existenResultados">
 <div class="card-columns">
   <div class="card animated fadeIn fast" *ngFor="let heroe of heroesSearch;let i=index">
      <!--ESTA FORMA TAMBIEN ES VALIDA
@@ -13,12 +15,18 @@
        class="btn btn-outline-primary btn-block" name="button">Ver más..</button>
        </div>
        <div *ngIf="mostrarInfo" class="card card-inverse card-primary mb-3 text-center">
-         <p class="card-text"> {{heroe.bio}}</p>
+        <p class="card-text"> {{heroe.bio}}</p>
            <footer>Fecha Creación: {{heroe.aparicion | date}}</footer>
        </div>
 
      </div>
 
 </div>
+</div>
+
+<div *ngIf="!existenResultados">
+   <h4 class="card-title animated fadeIn fast">No se han encontrado resultados...</h4>
+</div>
+
 <hr>
   <a  [routerLink]="['/Home']" class="btn btn-outline-danger btn-block"> Volver..</a>

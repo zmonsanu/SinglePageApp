@@ -11,6 +11,8 @@ import {HeroesService,Heroe} from '../../servicios/heroes.service';
 export class SearchComponent implements OnInit {
    heroesSearch:Heroe[]=[];
    mostrarInfo:boolean=false;
+   terminoABuscar :string;
+   existenResultados:boolean=false;
   constructor(private activatedRoute:ActivatedRoute,
               private _router:Router,
               private _heroesService:HeroesService) {
@@ -20,6 +22,9 @@ export class SearchComponent implements OnInit {
 this.activatedRoute.params.subscribe( params =>{
 this.heroesSearch = this._heroesService.buscarHeroes(params['nombre']);
 console.log(this.heroesSearch);
+this.terminoABuscar=params['nombre'];
+this.existenResultados=(this.heroesSearch.length>0);
+
 });
   }
 
